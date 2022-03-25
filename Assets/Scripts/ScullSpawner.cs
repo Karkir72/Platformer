@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class ScullSpawner : MonoBehaviour
 {
-    [SerializeField] private Scull _scull;
+    [SerializeField] private Scull _prefab;
 
     private Transform[] _spawnPoints;
 
@@ -16,10 +16,10 @@ public class ScullSpawner : MonoBehaviour
             _spawnPoints[i] = transform.GetChild(i);
         }
 
-        StartCoroutine(Spawn(_scull.gameObject, 3));
+        StartCoroutine(Spawn(_prefab, 3));
     }
 
-    private IEnumerator Spawn(GameObject scull, int period)
+    private IEnumerator Spawn(Scull scull, int period)
     {
         WaitForSeconds waitForSeconds = new WaitForSeconds(period);
 

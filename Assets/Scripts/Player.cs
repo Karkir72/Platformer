@@ -59,7 +59,7 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.GetComponent<Scull>())
+        if (collision.TryGetComponent<Scull>(out Scull scull))
         {
             _coins++;
             _scoreText.text = _coins.ToString();
