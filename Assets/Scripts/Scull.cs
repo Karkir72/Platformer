@@ -1,6 +1,3 @@
 using UnityEngine;
 
-public class Scull : MonoBehaviour
-{
-
-}
+public class Scull : MonoBehaviour{}

@@ -9,6 +9,7 @@ public class ScullSpawner : MonoBehaviour
 
     private void Start()
     {
+        int intervalToSpawn = 3;
         _spawnPoints = new Transform[transform.childCount];
 
         for (int i = 0; i < _spawnPoints.Length; i++)
@@ -16,7 +17,7 @@ public class ScullSpawner : MonoBehaviour
             _spawnPoints[i] = transform.GetChild(i);
         }
 
-        StartCoroutine(Spawn(_prefab, 3));
+        StartCoroutine(Spawn(_prefab, intervalToSpawn));
     }
 
     private IEnumerator Spawn(Scull scull, int period)
